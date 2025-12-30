@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Plugin Name: Bacola Product Location Filter
+ * Plugin URI:  https://github.com/kahnu044
+ * Description: Enforces location-based product availability across shop, cart, and checkout for Bacola theme.
+ * Version:     1.0.0
+ * Author:      kahnu044
+ * Author URI:  https://github.com/kahnu044
+ * Text Domain: bplf
+ */
+
+defined('ABSPATH') || exit;
+
+/**
+ * Plugin constants
+ */
+define('BPLF_VERSION', '1.0.0');
+define('BPLF_PATH', plugin_dir_path(__FILE__));
+define('BPLF_URL', plugin_dir_url(__FILE__));
