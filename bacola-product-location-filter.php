@@ -18,3 +18,12 @@ defined('ABSPATH') || exit;
 define('BPLF_VERSION', '1.0.0');
 define('BPLF_PATH', plugin_dir_path(__FILE__));
 define('BPLF_URL', plugin_dir_url(__FILE__));
+
+/**
+ * Load dependencies
+ */
+require_once BPLF_PATH . 'includes/class-bplf-dependencies.php';
+
+if ( ! BPLF_Dependencies::check() ) {
+    return;
+}
