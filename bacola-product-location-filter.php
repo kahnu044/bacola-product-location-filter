@@ -20,15 +20,22 @@ define('BPLF_PATH', plugin_dir_path(__FILE__));
 define('BPLF_URL', plugin_dir_url(__FILE__));
 
 /**
- * Load dependencies
+ * Initialize plugin after all plugins are loaded
  */
-require_once BPLF_PATH . 'includes/class-bplf-dependencies.php';
+add_action('plugins_loaded', 'bplf_init');
 
-if ( ! BPLF_Dependencies::check() ) {
-    return;
+function bplf_init()
+{
+    /**
+     * Load dependencies
+     */
+    require_once BPLF_PATH . 'includes/class-bplf-dependencies.php';
+    if (! BPLF_Dependencies::check()) {
+        return;
+    }
+
+    require_once BPLF_PATH . 'includes/class-bplf-messages.php';
+    require_once BPLF_PATH . 'includes/class-bplf-helpers.php';
+    require_once BPLF_PATH . 'includes/class-bplf-product-filter.php';
+    require_once BPLF_PATH . 'includes/class-bplf-cart-validation.php';
 }
-
-require_once BPLF_PATH . 'includes/class-bplf-messages.php';
-require_once BPLF_PATH . 'includes/class-bplf-helpers.php';
-require_once BPLF_PATH . 'includes/class-bplf-product-filter.php';
-require_once BPLF_PATH . 'includes/class-bplf-cart-validation.php';
