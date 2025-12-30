@@ -16,7 +16,7 @@ class BPLF_Product_Filter
         if (is_admin() || ! $query->is_main_query()) return;
         if (! (is_shop() || is_product_category() || is_product_tag())) return;
 
-        $location = BLPC_Helpers::get_user_location();
+        $location = BPLF_Helpers::get_user_location();
         if ($location === 'all') return;
 
         $query->set('tax_query', [
@@ -43,3 +43,5 @@ class BPLF_Product_Filter
         }
     }
 }
+
+new BPLF_Product_Filter();

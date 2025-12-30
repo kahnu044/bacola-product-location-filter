@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || exit;
 
-class BLPC_Cart_Validation
+class BPLF_Cart_Validation
 {
 
     public function __construct()
@@ -53,4 +53,4 @@ class BLPC_Cart_Validation
     }
 }
 
-new BLPC_Cart_Validation();
+new BPLF_Cart_Validation();
