@@ -27,3 +27,8 @@ require_once BPLF_PATH . 'includes/class-bplf-dependencies.php';
 if ( ! BPLF_Dependencies::check() ) {
     return;
 }
+
+require_once BPLF_PATH . 'includes/class-bplf-messages.php';
+require_once BPLF_PATH . 'includes/class-bplf-helpers.php';
+require_once BPLF_PATH . 'includes/class-bplf-product-filter.php';
+require_once BPLF_PATH . 'includes/class-bplf-cart-validation.php';
