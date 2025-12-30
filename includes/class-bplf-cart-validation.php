@@ -14,10 +14,10 @@ class BLPC_Cart_Validation
     public function validate_add_to_cart($passed, $product_id)
     {
 
-        $location = BLPC_Helpers::get_user_location();
+        $location = BPLF_Helpers::get_user_location();
 
-        if (! BLPC_Helpers::product_has_location($product_id, $location)) {
-            wc_add_notice(BLPC_Messages::product_not_available(), 'error');
+        if (! BPLF_Helpers::product_has_location($product_id, $location)) {
+            wc_add_notice(BPLF_Messages::product_not_available(), 'error');
             return false;
         }
 
@@ -27,12 +27,12 @@ class BLPC_Cart_Validation
     public function validate_cart()
     {
 
-        $location = BLPC_Helpers::get_user_location();
+        $location = BPLF_Helpers::get_user_location();
 
         foreach (WC()->cart->get_cart() as $item) {
-            if (! BLPC_Helpers::product_has_location($item['product_id'], $location)) {
+            if (! BPLF_Helpers::product_has_location($item['product_id'], $location)) {
                 wc_add_notice(
-                    get_the_title($item['product_id']) . ' — ' . BLPC_Messages::product_not_available(),
+                    get_the_title($item['product_id']) . ' — ' . BPLF_Messages::product_not_available(),
                     'error'
                 );
             }
@@ -42,11 +42,11 @@ class BLPC_Cart_Validation
     public function validate_checkout()
     {
 
-        $location = BLPC_Helpers::get_user_location();
+        $location = BPLF_Helpers::get_user_location();
 
         foreach (WC()->cart->get_cart() as $item) {
-            if (! BLPC_Helpers::product_has_location($item['product_id'], $location)) {
-                wc_add_notice(BLPC_Messages::cart_not_deliverable(), 'error');
+            if (! BPLF_Helpers::product_has_location($item['product_id'], $location)) {
+                wc_add_notice(BPLF_Messages::cart_not_deliverable(), 'error');
                 return;
             }
         }
