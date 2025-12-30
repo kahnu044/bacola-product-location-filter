@@ -19,4 +19,11 @@ class BPLF_Messages {
             __( 'Some items are not deliverable to your location.', 'bplf' )
         );
     }
+
+    public static function product_not_available_in_state() {
+        return apply_filters(
+            'bplf_product_not_available_in_state_message',
+            __( '%s is not available in the selected state (%s).', 'bplf' )
+        );
+    }
 }
